@@ -329,3 +329,32 @@
   border-color: black;
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .heroImage { width: 60%; }
+  .featureGrid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .qualityBanner { flex-direction: column; }
+  .qualityImage { width: 100%; height: 300px; }
+  .promoGrid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .valueBanner { flex-direction: column; }
+  .valueImage { width: 100%; height: 300px; }
+  .valueContent { padding: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .heroContent { flex-direction: column; min-height: auto; align-items: stretch; }
+  .heroImage { position: relative; width: 100%; height: 300px; order: 1; }
+  .heroTextContainer { padding: 2rem; width: 100%; max-width: none; transform: none; aspect-ratio: auto; order: 2; margin-top: -50px; border-radius: 0; }
+  .heroTitle { font-size: 2.5rem; }
+  
+  .featureGrid { grid-template-columns: 1fr; }
+  .categoryGrid { grid-template-columns: repeat(2, 1fr); }
+  .promoGrid { grid-template-columns: 1fr; }
+  
+  .qualityText { padding: 2rem 1rem; }
+  .qualityText h2 { font-size: 2rem; }
+  
+  .valueContent { padding: 2rem 1rem; }
+  .valueContent h2 { font-size: 2rem; }
+}
+

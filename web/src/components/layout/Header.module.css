@@ -154,3 +154,35 @@
   outline: none;
   font-family: inherit;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .topHeaderContent {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .headerActions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .navContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .searchBar {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
