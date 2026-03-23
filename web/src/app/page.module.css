@@ -370,17 +370,32 @@
   }
 }
 
+/* On mobile, use horizontal swipe carousels exactly like the Woolworths app to avoid looking clustered */
 @media (max-width: 768px) {
   .productGrid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 1rem;
+    padding-bottom: 1rem;
+    /* Hide scrollbar for a clean native app look */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .productGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .productGrid > * {
+    scroll-snap-align: start;
+    flex: 0 0 calc(50% - 0.5rem); /* show 2 items, and a peek of the next */
+    min-width: 140px;
   }
 }
 
 @media (max-width: 480px) {
-  .productGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+  .productGrid > * {
+    flex: 0 0 calc(60% - 0.5rem); /* show 1.5 items (one full, one peeking) */
+    min-width: 160px;
   }
 }
 

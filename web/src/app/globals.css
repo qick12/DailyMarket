@@ -97,3 +97,13 @@ section {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Mobile global fixes */
+@media (max-width: 768px) {
+  section {
+    padding: 30px 0; /* Less whitespace between sections on phone */
+  }
+  .container {
+    padding: 0 16px;
+  }
+}
