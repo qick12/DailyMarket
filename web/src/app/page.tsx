@@ -31,14 +31,14 @@ const FEATURE_CARDS = [
 ];
 
 const CATEGORIES = [
-  { label: 'FRUIT, VEG & SALAD', cat: 'fruit-veg' },
-  { label: 'MEAT, POULTRY & FISH', cat: 'meat-poultry' },
-  { label: 'BAKERY & DESSERTS', cat: 'bakery' },
-  { label: 'DAIRY, EGGS & MILK', cat: 'dairy' },
-  { label: 'PANTRY & DRY GOODS', cat: 'pantry' },
-  { label: 'BEVERAGES & JUICE', cat: 'beverages' },
-  { label: 'SWEETS & SNACKS', cat: 'sweets' },
-  { label: 'HOUSEHOLD & CARE', cat: 'household-care' }
+  { label: 'Fresh Produce', cat: 'fruit-veg', emoji: '🥑' },
+  { label: 'Butchery', cat: 'meat-poultry', emoji: '🥩' },
+  { label: 'Bakery', cat: 'bakery', emoji: '🧁' },
+  { label: 'Dairy & Eggs', cat: 'dairy', emoji: '🥛' },
+  { label: 'Pantry', cat: 'pantry', emoji: '🥫' },
+  { label: 'Beverages', cat: 'beverages', emoji: '🧃' },
+  { label: 'Sweets', cat: 'sweets', emoji: '🍫' },
+  { label: 'Household', cat: 'household-care', emoji: '🧻' }
 ];
 
 export default async function Home() {
@@ -122,17 +122,17 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ── Category Chips ── */}
-      <section className="container" style={{ marginTop: '2.5rem', marginBottom: '1.5rem', overflowX: 'auto', whiteSpace: 'nowrap', paddingBottom: '10px' }}>
-
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+      {/* ── Modern App Category Scroll ── */}
+      <section className="container" style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
+        <div className={styles.categoryScroll}>
           {CATEGORIES.map(c => (
             <Link 
               key={c.cat} 
               href={`/shop?category=${c.cat}`}
-              className={styles.categoryChip}
+              className={styles.categoryAppCard}
             >
-              {c.label}
+              <div className={styles.categoryIcon}>{c.emoji}</div>
+              <span className={styles.categoryText}>{c.label}</span>
             </Link>
           ))}
         </div>
