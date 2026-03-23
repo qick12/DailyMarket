@@ -6,39 +6,39 @@ import styles from './page.module.css';
 const FEATURE_CARDS = [
   {
     title: 'THE ART OF ENTERTAINING',
-    image: 'https://images.unsplash.com/photo-1547573854-74d2a71d0827?w=600&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1558403194-611308249627?w=600&h=800&fit=crop', /* Charcuterie / Cheese board */
     link: '/shop',
     accent: '#1a1a1a'
   },
   {
     title: 'PREMIUM CUTS & AGED MEATS',
-    image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&h=800&fit=crop', /* Juicy Sizzling Steak */
     link: '/shop?category=meat-poultry',
     accent: '#2c3e50'
   },
   {
     title: 'GOURMET PANTRY ESSENTIALS',
-    image: 'https://images.unsplash.com/photo-1511130523224-699fd19cad80?w=600&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=800&fit=crop', /* High-end olive oil & artisan spices */
     link: '/shop?category=pantry',
     accent: '#7d6608'
   },
   {
     title: 'ARTISAN BAKERY & SWEETS',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=800&fit=crop', /* Warm, fresh, buttery croissants */
     link: '/shop?category=bakery',
     accent: '#1a1a1a'
   }
 ];
 
 const CATEGORIES = [
-  { label: 'Fresh Produce', cat: 'fruit-veg', emoji: '🥑' },
-  { label: 'Butchery', cat: 'meat-poultry', emoji: '🥩' },
-  { label: 'Bakery', cat: 'bakery', emoji: '🧁' },
-  { label: 'Dairy & Eggs', cat: 'dairy', emoji: '🥛' },
-  { label: 'Pantry', cat: 'pantry', emoji: '🥫' },
-  { label: 'Beverages', cat: 'beverages', emoji: '🧃' },
-  { label: 'Sweets', cat: 'sweets', emoji: '🍫' },
-  { label: 'Household', cat: 'household-care', emoji: '🧻' }
+  { label: 'Fresh Produce', cat: 'fruit-veg', photo: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=200&h=200&fit=crop' },
+  { label: 'Butchery', cat: 'meat-poultry', photo: 'https://images.unsplash.com/photo-1603048297172-c9254479895e?w=200&h=200&fit=crop' },
+  { label: 'Bakery', cat: 'bakery', photo: 'https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=200&h=200&fit=crop' },
+  { label: 'Dairy & Eggs', cat: 'dairy', photo: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=200&h=200&fit=crop' },
+  { label: 'Pantry', cat: 'pantry', photo: 'https://images.unsplash.com/photo-1587049352847-4d4e12e2c0e8?w=200&h=200&fit=crop' },
+  { label: 'Beverages', cat: 'beverages', photo: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&h=200&fit=crop' },
+  { label: 'Sweets', cat: 'sweets', photo: 'https://images.unsplash.com/photo-1582293041079-7814c2b12047?w=200&h=200&fit=crop' },
+  { label: 'Household', cat: 'household-care', photo: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=200&h=200&fit=crop' }
 ];
 
 export default async function Home() {
@@ -89,7 +89,7 @@ export default async function Home() {
               <Link href="/shop" className={styles.heroBtn}>START SHOPPING</Link>
             </div>
             <div className={styles.heroImage}>
-              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600&h=900&fit=crop" alt="Fresh Marketplace Delivery" />
+              <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=1600&h=900&fit=crop" alt="Delicious Gourmet Food App" />
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default async function Home() {
       {/* ── Marketplace Quality Banner ── */}
       <section className="container">
         <div className={styles.qualityBanner}>
-          <div className={styles.qualityImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1488459711635-078593971c27?w=1200&h=400&fit=crop')" }} />
+          <div className={styles.qualityImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1601314167098-ec58eeef0f25?w=1200&h=400&fit=crop')" }} />
           <div className={styles.qualityText}>
             <h2>BUY DIRECT FROM THE SOURCE</h2>
             <p>We connect you with artisan producers and elite vendors who deliver straight to your door. No middlemen, just quality.</p>
@@ -131,7 +131,9 @@ export default async function Home() {
               href={`/shop?category=${c.cat}`}
               className={styles.categoryAppCard}
             >
-              <div className={styles.categoryIcon}>{c.emoji}</div>
+              <div className={styles.categoryIcon}>
+                <img src={c.photo} alt={c.label} style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%'}} />
+              </div>
               <span className={styles.categoryText}>{c.label}</span>
             </Link>
           ))}
@@ -444,7 +446,7 @@ export default async function Home() {
           <p>Join thousands of South African vendors selling on DailyMarket. You supply, you deliver, we grow together.</p>
           <Link href="/auth/register?role=supplier" className={styles.heroBtn} style={{ marginTop: '2rem', display: 'inline-block', width: 'fit-content' }}>BECOME A SUPPLIER</Link>
         </div>
-        <div className={styles.valueImage} />
+        <div className={styles.valueImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541544061803-12ce17b4ab3e?w=1200&h=800&fit=crop')" }} />
       </section>
 
     </>
