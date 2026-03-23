@@ -106,4 +106,7 @@ section {
   .container {
     padding: 0 16px;
   }
+  .main-content {
+    padding-bottom: 70px; /* Space for BottomNav */
+  }
 }

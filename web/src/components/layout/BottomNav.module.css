@@ -1,0 +1,68 @@
+.bottomNav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  z-index: 9999;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom); /* For iPhone notch */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #888;
+  text-decoration: none;
+  flex: 1;
+  height: 100%;
+}
+
+.navItem svg {
+  width: 24px;
+  height: 24px;
+}
+
+.navItemText {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.active {
+  color: black;
+}
+
+.cartWrapper {
+  position: relative;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background: #dc2626;
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show on mobile only */
+@media (max-width: 768px) {
+  .bottomNav {
+    display: flex;
+  }
+}

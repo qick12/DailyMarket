@@ -1,7 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import BottomNav from '@/components/layout/BottomNav';
 import { CartProvider } from '@/context/CartContext';
 import { AuthProvider } from '@/context/AuthContext';
 import { ToastProvider } from '@/components/ui/Toast';
@@ -12,6 +13,14 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'DailyMarket | Premium Grocery Delivery',
   description: 'Premium grocery e-commerce inspired by Woolworths Food.',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -26,8 +35,9 @@ export default function RootLayout({
           <AuthProvider>
             <CartProvider>
               <Header />
-              <main>{children}</main>
+              <main className="main-content">{children}</main>
               <Footer />
+              <BottomNav />
             </CartProvider>
           </AuthProvider>
         </ToastProvider>

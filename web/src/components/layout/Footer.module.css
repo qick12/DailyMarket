@@ -170,4 +170,7 @@
     gap: 1rem;
     text-align: center;
   }
+  .footer {
+    display: none; /* Hide huge desktop footer entirely on mobile apps */
+  }
 }
