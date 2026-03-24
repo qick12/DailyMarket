@@ -1,19 +1,19 @@
 .card {
   background: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   height: 100%;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .linkWrapper {
@@ -59,6 +59,15 @@
   color: #888888;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verifiedIcon {
+  width: 12px;
+  height: 12px;
+  color: #3b82f6; /* Premium blue check */
 }
 
 .title {
@@ -234,27 +243,28 @@
 
 @media (max-width: 768px) {
   .card {
-    border-radius: 12px;
-    box-shadow: none;
-    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Restore premium shadow on mobile */
+    border: none; /* Remove harsh border */
   }
   .imageContainer {
-    border-radius: 12px 12px 0 0;
+    border-radius: 16px 16px 0 0;
   }
   .content {
-    padding: 0.75rem;
-    gap: 0.25rem;
+    padding: 1rem;
+    gap: 0.4rem;
   }
   .title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #000;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #1a1a1a;
   }
   .vendor {
-    font-size: 0.6rem;
-    color: #555;
+    font-size: 0.65rem;
+    color: #888;
     margin-bottom: 2px;
+    font-weight: 900;
   }
   .ratingBox {
     padding-top: 0.15rem;

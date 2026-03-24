@@ -12,9 +12,11 @@ import { ConsumerMagicAdd } from './ConsumerMagicAdd';
 export default function Header() {
   const { totalItems, isCartOpen, setIsCartOpen } = useCart();
   const { user, loading, signOut } = useAuth();
-  
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isHome ? styles.homeHeader : ''}`}>
       <div className={styles.topHeader}>
         <div className="container">
           <div className={styles.topHeaderContent}>
@@ -23,24 +25,46 @@ export default function Header() {
             </Link>
 
             <div className={styles.headerActions}>
+              {/* Magic Search bar always visible in top bar on desktop */}
+              <div className={styles.magicSearchWrapper}>
+                <ConsumerMagicAdd />
+              </div>
+
               {!loading && (
                 user ? (
-                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                      <span style={{ fontSize: '0.9rem' }}>👋 {user.email?.split('@')[0]}</span>
-                      <button onClick={signOut} style={{ background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.8rem' }}>Sign Out</button>
-                   </div>
+                  <div className={styles.userMenu}>
+                    <span className={styles.userGreeting}>👋 {user.email?.split('@')[0]}</span>
+                    <button onClick={signOut} className={styles.signOutBtn}>Log Out</button>
+                  </div>
                 ) : (
-                  <Link href="/login" className={styles.actionBtn}>Sign In</Link>
+                  <Link href="/login" className={styles.actionBtn}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Sign In</span>
+                  </Link>
                 )
               )}
 
-              <div onClick={() => setIsCartOpen(true)} style={{ cursor: 'pointer', position: 'relative' }}>
-                🛒 {totalItems > 0 && <span style={{ position: 'absolute', top: '-10px', right: '-10px', background: 'orange', borderRadius: '50%', padding: '2px 6px', fontSize: '10px', color: 'white' }}>{totalItems}</span>}
+              <div className={styles.cartBtn} onClick={() => setIsCartOpen(true)}>
+                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                 {totalItems > 0 && <span className={styles.cartBadge}>{totalItems}</span>}
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <nav className={styles.bottomHeader}>
+        <div className={`container ${styles.navContainer}`}>
+          <div className={styles.navLinks}>
+            <Link href="/shop">SHOP</Link>
+            <Link href="/bakery">BAKERY</Link>
+            <Link href="/meat-poultry">BUTCHERY</Link>
+            <Link href="/discovery">OFFERS</Link>
+            <Link href="/re-order">QUICK BUY</Link>
+          </div>
+        </div>
+      </nav>
+
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );
