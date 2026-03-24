@@ -11,10 +11,13 @@
 .drawer {
   width: 450px;
   height: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
-  animation: slideIn 0.3s ease-out;
+  animation: slideIn 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 @keyframes slideIn {
@@ -162,13 +165,19 @@
 
 .checkoutBtn {
   display: block;
-  background: black;
+  background: #1a1a1a;
   color: white;
   text-align: center;
   padding: 1rem;
   font-weight: 900;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.checkoutBtn:hover {
+  transform: translateY(-2px);
 }
 
 /* Mobile Responsiveness */
