@@ -5,26 +5,26 @@ import styles from './page.module.css';
 
 const FEATURE_CARDS = [
   {
-    title: 'THE ART OF ENTERTAINING',
-    image: 'https://images.unsplash.com/photo-1558403194-611308249627?w=600&h=800&fit=crop', /* Charcuterie / Cheese board */
+    title: 'FARM FRESH PRODUCE',
+    image: 'https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=600&h=800&fit=crop', /* Vibrant raw veggies in crates */
     link: '/shop',
     accent: '#1a1a1a'
   },
   {
-    title: 'PREMIUM CUTS & AGED MEATS',
-    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&h=800&fit=crop', /* Juicy Sizzling Steak */
+    title: 'THE BUTCHERY',
+    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=800&fit=crop', /* Raw premium meat on butcher paper */
     link: '/shop?category=meat-poultry',
     accent: '#2c3e50'
   },
   {
-    title: 'GOURMET PANTRY ESSENTIALS',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=800&fit=crop', /* High-end olive oil & artisan spices */
+    title: 'THE ARTISAN PANTRY',
+    image: 'https://images.unsplash.com/photo-1587049352847-4d4e12e2c0e8?w=600&h=800&fit=crop', /* Beautiful glass pantry jars & staples */
     link: '/shop?category=pantry',
     accent: '#7d6608'
   },
   {
-    title: 'ARTISAN BAKERY & SWEETS',
-    image: 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=800&fit=crop', /* Warm, fresh, buttery croissants */
+    title: 'FRESH BAKED GOODS',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=800&fit=crop', /* Fresh artisan bread loaves */
     link: '/shop?category=bakery',
     accent: '#1a1a1a'
   }
@@ -89,7 +89,7 @@ export default async function Home() {
               <Link href="/shop" className={styles.heroBtn}>START SHOPPING</Link>
             </div>
             <div className={styles.heroImage}>
-              <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=1600&h=900&fit=crop" alt="Delicious Gourmet Food App" />
+              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600&h=900&fit=crop" alt="Premium Grocery Delivery" />
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default async function Home() {
       {/* ── Marketplace Quality Banner ── */}
       <section className="container">
         <div className={styles.qualityBanner}>
-          <div className={styles.qualityImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1601314167098-ec58eeef0f25?w=1200&h=400&fit=crop')" }} />
+          <div className={styles.qualityImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=1200&h=400&fit=crop')" }} />
           <div className={styles.qualityText}>
             <h2>BUY DIRECT FROM THE SOURCE</h2>
             <p>We connect you with artisan producers and elite vendors who deliver straight to your door. No middlemen, just quality.</p>
@@ -144,7 +144,7 @@ export default async function Home() {
         <section className={`container ${styles.localSection}`}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
             <div>
-              <h2 className={styles.sectionTitle} style={{ margin: 0, color: '#c2410c', textAlign: 'left' }}>🇿🇦 NEW FROM LOCAL MERCHANTS</h2>
+              <h2 className={styles.sectionTitle} style={{ margin: 0, color: '#c2410c', textAlign: 'left' }}>NEW FROM LOCAL MERCHANTS</h2>
               <p style={{ margin: '0.25rem 0 0', opacity: 0.8, fontSize: '0.8rem', color: '#9a3412', fontWeight: 600 }}>Supporting local South African businesses</p>
             </div>
             <Link href="/shop" style={{ fontSize: '0.8rem', fontWeight: 800, color: '#f97316', textDecoration: 'none', border: '1.5px solid #f97316', padding: '8px 16px', borderRadius: '6px' }}>EXPLORE ALL</Link>
@@ -200,7 +200,7 @@ export default async function Home() {
       {biltongRow.length > 0 && (
         <section className="container" style={{ marginTop: '4rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0, textAlign: 'left' }}>🇿🇦 BEST SELLING BILTONG</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0, textAlign: 'left' }}>BEST SELLING BILTONG</h2>
             <Link href="/shop?category=meat-poultry" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -227,7 +227,7 @@ export default async function Home() {
       {vegRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🥦 FRUIT & VEGETABLES</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>FRUIT & VEGETABLES</h2>
             <Link href="/shop?category=fruit-veg" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -253,7 +253,7 @@ export default async function Home() {
       {beverageRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🥤 BEVERAGES & JUICE</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>BEVERAGES & JUICE</h2>
             <Link href="/shop?category=beverages" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -278,7 +278,7 @@ export default async function Home() {
       {householdRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🧼 HOUSEHOLD & PERSONAL CARE</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>HOUSEHOLD & CARE</h2>
             <Link href="/shop?category=household-care" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -303,7 +303,7 @@ export default async function Home() {
       {pantryRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🛒 PANTRY SHOP</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>THE PANTRY</h2>
             <Link href="/shop?category=pantry" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -328,7 +328,7 @@ export default async function Home() {
       {bakeryRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🧁 BAKERY & PREPARED MEALS</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>BAKERY & MEALS</h2>
             <Link href="/shop?category=bakery" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -353,7 +353,7 @@ export default async function Home() {
       {meatRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🥩 MEAT & POULTRY</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>MEAT & POULTRY</h2>
             <Link href="/shop?category=meat-poultry" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -378,7 +378,7 @@ export default async function Home() {
       {sweetsRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🍫 SWEETS & SNACKS</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>SWEETS & SNACKS</h2>
             <Link href="/shop?category=sweets" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -416,7 +416,7 @@ export default async function Home() {
       {dairyRow.length > 0 && (
         <section className="container" style={{ marginTop: '3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>🥛 CHILLED & DAIRY</h2>
+            <h2 className={styles.sectionTitle} style={{ margin: 0 }}>CHILLED & DAIRY</h2>
             <Link href="/shop?category=dairy" style={{ fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}>VIEW ALL</Link>
           </div>
           <div className={styles.productGrid}>
@@ -444,7 +444,7 @@ export default async function Home() {
           <p>Join thousands of South African vendors selling on DailyMarket. You supply, you deliver, we grow together.</p>
           <Link href="/auth/register?role=supplier" className={styles.heroBtn} style={{ marginTop: '2rem', display: 'inline-block', width: 'fit-content' }}>BECOME A SUPPLIER</Link>
         </div>
-        <div className={styles.valueImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541544061803-12ce17b4ab3e?w=1200&h=800&fit=crop')" }} />
+        <div className={styles.valueImage} style={{ backgroundImage: "url('https://images.unsplash.com/photo-1604719312566-f4129e93f1d4?w=1200&h=800&fit=crop')" }} />
       </section>
 
     </>

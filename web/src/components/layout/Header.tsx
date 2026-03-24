@@ -77,7 +77,7 @@ export default function Header() {
             <Link href="/shop?category=sweets">GOURMET SELECTIONS</Link>
             <Link href="/shop?category=meat-poultry">THE BUTCHERY</Link>
             <Link href="/shop?category=pantry">ARTISAN PANTRY</Link>
-            <Link href="/re-order">RE-ORDER FOOD</Link>
+            <Link href="/re-order">BUY AGAIN</Link>
           </div>
 
           <div className={styles.searchBar}>
