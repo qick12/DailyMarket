@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import DepartmentListing from '@/components/ui/DepartmentListing';
 
 export default function BakeryPage() {
