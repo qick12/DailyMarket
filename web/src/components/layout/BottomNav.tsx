@@ -21,7 +21,7 @@ export default function BottomNav() {
         <span className={styles.navItemText}>Home</span>
       </Link>
 
-      <Link href="/shop" className={`${styles.navItem} ${pathname.startsWith('/shop') ? styles.active : ''}`}>
+      <Link href="/shop" className={`${styles.navItem} ${pathname?.startsWith('/shop') ? styles.active : ''}`}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/>
           <line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -29,7 +29,7 @@ export default function BottomNav() {
         <span className={styles.navItemText}>Browse</span>
       </Link>
 
-      <Link href="/discovery" className={`${styles.navItem} ${pathname.startsWith('/discovery') ? styles.active : ''}`}>
+      <Link href="/discovery" className={`${styles.navItem} ${pathname?.startsWith('/discovery') ? styles.active : ''}`}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
@@ -50,7 +50,7 @@ export default function BottomNav() {
         <span className={styles.navItemText}>Baskets</span>
       </div>
 
-      <Link href="/login" className={`${styles.navItem} ${pathname.startsWith('/login') || pathname.startsWith('/dashboard') ? styles.active : ''}`}>
+      <Link href="/login" className={`${styles.navItem} ${pathname?.startsWith('/login') || pathname?.startsWith('/dashboard') ? styles.active : ''}`}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
           <circle cx="12" cy="7" r="4"/>

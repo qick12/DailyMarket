@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { fetchSAProducts } from '@/services/marketplaceService';
@@ -42,8 +43,13 @@ const CATEGORIES = [
 ];
 
 export default async function Home() {
-  // Fetch real SA marketplace products
-  const allProducts = await fetchSAProducts(1, 400);
+  let allProducts: any[] = [];
+  try {
+    // Fetch real SA marketplace products
+    allProducts = await fetchSAProducts(1, 400);
+  } catch (err) {
+    console.error('[LandingPage] Failed to fetch products:', err);
+  }
 
   const getRow = (cat: string, max = 4) => allProducts.filter(p => p.category === cat).slice(0, max);
 
