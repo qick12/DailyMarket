@@ -1,5 +1,7 @@
 import DepartmentListing from '@/components/ui/DepartmentListing';
 
+export const dynamic = 'force-dynamic';
+
 export default function PantryPage() {
-  return <DepartmentListing title="Pantry & Dry Goods" category="pantry" />;
+  return <DepartmentListing title="Artisan Pantry" category="pantry" />;
 }
