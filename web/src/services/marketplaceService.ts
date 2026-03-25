@@ -247,6 +247,14 @@ async function fetchFromStore(store: typeof SHOPIFY_STORES[0], retries = 2): Pro
 import { supabase } from '@/lib/supabase';
 
 export async function fetchSAProducts(page = 1, pageSize = 400): Promise<MarketplaceProduct[]> {
+  // 🚀 BUILD OPTIMIZATION: Skip fetching from external APIs during Next.js build phase
+  // This prevents build timeouts and 504 errors on Vercel. 
+  // We only fetch in development or at runtime in production.
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+     console.log('[Marketplace] Build phase detected. Skipping external product fetch.');
+     return [];
+  }
+
   // 1. Fetch from local Supabase DB (Products added via Business Portal)
   let localProducts: MarketplaceProduct[] = [];
   try {
