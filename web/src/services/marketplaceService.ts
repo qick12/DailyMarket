@@ -248,10 +248,12 @@ import { supabase } from '@/lib/supabase';
 
 export async function fetchSAProducts(page = 1, pageSize = 400): Promise<MarketplaceProduct[]> {
   // 🚀 BUILD OPTIMIZATION: Skip fetching from external APIs during Next.js build phase
-  // This prevents build timeouts and 504 errors on Vercel. 
-  // We only fetch in development or at runtime in production.
-  if (process.env.NEXT_PHASE === 'phase-production-build') {
-     console.log('[Marketplace] Build phase detected. Skipping external product fetch.');
+  // We detect build phase by checking if we are on Vercel/CI AND missing Supabase secrets
+  const isVercelBuild = process.env.VERCEL === '1' && !process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const isCI = !!process.env.CI;
+  
+  if (isVercelBuild || (isCI && !process.env.NEXT_PUBLIC_SUPABASE_URL)) {
+     console.log('[Marketplace] Build/CI environment detected (No Secrets). Skipping product fetch to prevent timeouts.');
      return [];
   }
 
